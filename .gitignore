@@ -1,0 +1,14 @@
+#Ignora executaveis e arquivos de compilacao
+*.out
+*.exe
+*.o
+gerador
+#Ignora arquivos de configuracao do vscode
+.vscode/
+#Ignora arquivos temporarios e backups
+*.tmp
+*.bak
+*.swp
+*~
+#Ignora logs
+*.log
