@@ -2,6 +2,23 @@
 #include <stdlib.h>
 #include <time.h>
 
+//Cores
+const char *dark_purple = "\033[38;5;55m";
+const char *purple = "\033[38;5;93m";
+const char *light_purple = "\033[38;5;219m";
+const char *reset = "\033[0m";
+
+void logo(){
+    printf("%s    ###      ###      ###      ###  ###         ###       ###\n", dark_purple);
+    printf("   ####     ####     ####     ####  ####       #####     ####  \n");
+    printf("  ##  #    ##       ## ##    ## ##  ## ##     ##  ##    ## ##  \n");
+    printf(" ##       ##       ##  ##   ##  ##  ##  ##   ##   ##   ##  ##\n");
+    printf("##  ###  ######   #####    #######  ##   ##  ##   ##  ##### \n");
+    printf("##    #  ##       ##  ##   ##   ##  ##  ###  ##  ##   ##  ##  \n");
+    printf("#######  #######  ##   ##  ##   ##  ######    ####    ##   ##%s\n", reset);
+    printf("______________________________________________________________\n");
+}
+
 void gerar_pass(int num_letras){
     srand(time(NULL));
     for(int i = 0;i<num_letras;i++){
@@ -36,21 +53,33 @@ void escolha(int op){
     }
 } 
 
-void apresentacao(){
-    printf("##########################\n");
-    printf("#    GERADOR DE SENHA    #\n");
-    printf("##########################\n");
-    printf("TAMANHOS: \n");
-    printf("1) => 6 Letras\n");
-    printf("2) => 8 Letras\n");
-    printf("3) => 12 Letras\n");
+void opcoes(){
+    printf("\nTAMANHOS: \n");
+    printf("1) 6 Letras\n");
+    printf("2) 8 Letras\n");
+    printf("3) 12 Letras\n");
     printf("4) Personalizado\n");
+    printf("5) \033[31mSair\033[0m\n");
+}
+
+void apresentacao(){
+    logo();
+    opcoes();
 }   
 
 int main(){
-    apresentacao();
     int opcao = 0;
-    printf("Escolha: ");
-    scanf("%d", &opcao);
-    escolha(opcao);
+    apresentacao();
+    do{
+        printf("Escolha: ");
+        scanf("%d", &opcao);
+        system("clear");
+        escolha(opcao);
+        opcoes();
+        printf("\n");
+        if(opcao == 5){
+            printf("saindo...");
+        }
+    }while(opcao != 5);
+    printf("\n");
 }
