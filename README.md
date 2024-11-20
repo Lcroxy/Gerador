@@ -10,7 +10,7 @@ Este é um projeto de um gerador de senhas feito em C. Ele permite gerar senhas 
 
 ## Como Usar
 
-1. Clone este repositório: git clone https//:github.com/Lcroxy/Password_Generator.git
+1. Clone este repositório: git clone https//:github.com/Lcroxy/Gerador.git
 2. Compile o programa: gcc -o gerador gerador.c
 3. Execute o programa: ./gerador
 
